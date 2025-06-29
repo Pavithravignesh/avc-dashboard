@@ -63,32 +63,32 @@ A full-stack web application dashboard to visualize and analyze ACV (Annual Cont
 
 ### 🔌 Backend
 
-bash
-cd backend
-npm install
-npm run dev
+- bash
+- cd backend
+- npm install
+- npm run dev
 
 ## 🖥 Frontend
 
-cd frontend
-npm install
-npm start
+- cd frontend
+- npm install
+- npm start
 
 ## 📦 Folder Structure (Simplified)
 
-acv-dashboard/
-├── backend/
-│ ├── routes/
-│ ├── models/
-│ ├── controllers/
-│ └── server.js
-├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── state/
-│ │ └── App.js
-└── README.md
+- acv-dashboard/
+- ├── backend/
+- │ ├── routes/
+- │ ├── models/
+- │ ├── controllers/
+- │ └── server.js
+- ├── frontend/
+- │ ├── src/
+- │ │ ├── components/
+- │ │ ├── pages/
+- │ │ ├── state/
+- │ │ └── App.js
+- └── README.md
 
 ## 📌 Notes
 
