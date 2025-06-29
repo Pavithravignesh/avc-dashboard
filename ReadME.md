@@ -14,13 +14,13 @@ A full-stack web application dashboard to visualize and analyze ACV (Annual Cont
 
 ## 📸 Project Screenshot
 
-![Dashboard Screenshot](./dashboard1.png)
-![Dashboard Screenshot](./dashboard2.png)
-![Dashboard Screenshot](./dashboard3.png)
-![Dashboard Screenshot](./dashboard4.png)
-![Dashboard Screenshot](./dashboard5.png)
-![Dashboard Screenshot](./dashboard6.png)
-![Dashboard Screenshot](./dashboard7.png)
+![Dashboard Screenshot](./dashboard-1.png)
+![Dashboard Screenshot](./dashboard-2.png)
+![Dashboard Screenshot](./dashboard-3.png)
+![Dashboard Screenshot](./dashboard-4.png)
+![Dashboard Screenshot](./dashboard-5.png)
+![Dashboard Screenshot](./dashboard-6.png)
+![Dashboard Screenshot](./dashboard-7.png)
 
 ## 🔧 Tech Stack
 
