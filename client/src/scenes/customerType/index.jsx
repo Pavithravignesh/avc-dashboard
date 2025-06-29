@@ -1,26 +1,26 @@
-import React, { useRef } from 'react';
-import { useGetCustomerTypeQuery } from 'state/api';
+import React, { useRef } from "react";
+import { useGetCustomerTypeQuery } from "state/api";
 import {
   Box,
   useMediaQuery,
   Typography,
   IconButton,
-  Tooltip
+  Tooltip,
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Header from "components/Header";
-import CusTySummaryTable from './viewData/CusTySummaryTable.jsx';
-import CusTyDonutChart from './viewData/CusTyDonutChart.jsx';
-import CusTyStackedBarChart from './viewData/CusTyStackedBarChart.jsx';
+import CusTySummaryTable from "./viewData/CusTySummaryTable.jsx";
+import CusTyDonutChart from "./viewData/CusTyDonutChart.jsx";
+import CusTyStackedBarChart from "./viewData/CusTyStackedBarChart.jsx";
 import * as d3 from "d3";
-import FlexBetween from 'components/FlexBetween.jsx';
-import ShimmerUI from 'components/ShimmerUI.jsx';
+import FlexBetween from "components/FlexBetween.jsx";
+import ShimmerUI from "components/ShimmerUI.jsx";
 
 function CustomerType() {
   const { data, isLoading } = useGetCustomerTypeQuery();
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   const isTablet = useMediaQuery("(min-width: 768px)");
-  const tableRef = useRef();  
+  const tableRef = useRef();
 
   if (isLoading || !data || !Array.isArray(data)) {
     return (
@@ -30,27 +30,29 @@ function CustomerType() {
     );
   }
 
-  const donutData = d3.rollups(
-    data,
-    v => d3.sum(v, d => d.acv),
-    d => d.Cust_Type
-  ).map(([label, value]) => ({ label, value }));
+  const donutData = d3
+    .rollups(
+      data,
+      (v) => d3.sum(v, (d) => d.acv),
+      (d) => d.Cust_Type
+    )
+    .map(([label, value]) => ({ label, value }));
 
   const getChartDimensions = () => {
     if (isNonMobile) {
       return {
         stackedBar: { width: 600, height: 350 },
-        donut: { width: 520, height: 320 }
+        donut: { width: 520, height: 320 },
       };
     } else if (isTablet) {
       return {
         stackedBar: { width: 500, height: 300 },
-        donut: { width: 480, height: 280 }
+        donut: { width: 480, height: 280 },
       };
     } else {
       return {
         stackedBar: { width: 350, height: 250 },
-        donut: { width: 450, height: 250 }
+        donut: { width: 450, height: 250 },
       };
     }
   };
@@ -62,11 +64,12 @@ function CustomerType() {
     if (!tableRef.current) return;
 
     const tableText = tableRef.current.innerText;
-    navigator.clipboard.writeText(tableText)
+    navigator.clipboard
+      .writeText(tableText)
       .then(() => {
         alert("Summary table copied to clipboard!");
       })
-      .catch(err => {
+      .catch((err) => {
         console.error("Copy failed", err);
         alert("Failed to copy table.");
       });
@@ -77,10 +80,17 @@ function CustomerType() {
       <Header title="Customer Type" subTitle="Customer type analysis" />
 
       <Box display="flex" flexDirection="column" gap={3} mt={3}>
-
-        {/* Charts Section */}
-        <Box display="flex" flexDirection={isNonMobile ? "row" : "column"} gap={3}>
-          <Box flex={isNonMobile ? "2" : "1"} display="flex" flexDirection="column" gap={3}>
+        <Box
+          display="flex"
+          flexDirection={isNonMobile ? "row" : "column"}
+          gap={3}
+        >
+          <Box
+            flex={isNonMobile ? "2" : "1"}
+            display="flex"
+            flexDirection="column"
+            gap={3}
+          >
             <FlexBetween>
               <Box display="flex" alignItems="left" justifyContent="center">
                 <CusTyStackedBarChart
@@ -106,9 +116,13 @@ function CustomerType() {
           </Box>
         </Box>
 
-        {/* Summary Table with Copy Button */}
         <Box width="100%" ref={tableRef} mb="2rem">
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            mb={1}
+          >
             <Typography variant="h6">Summary Table</Typography>
             <Tooltip title="Copy Table">
               <IconButton onClick={handleCopyTable}>

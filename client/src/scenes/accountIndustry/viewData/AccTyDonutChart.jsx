@@ -43,7 +43,7 @@ function AccTyDonutChart({ data, width = 300, height = 300 }) {
         arcs.append("path")
             .attr("d", arc)
             .attr("fill", (_, i) => COLORS[i % COLORS.length])
-            .attr("stroke", theme.palette.background.paper) // stroke adjusts with theme
+            .attr("stroke", theme.palette.background.paper) 
             .attr("stroke-width", 2);
 
         const total = d3.sum(data, d => d.value);
@@ -54,7 +54,7 @@ function AccTyDonutChart({ data, width = 300, height = 300 }) {
         //     .innerRadius(radius * 1.25);  // keep inner = outer → circle
 
         // /* one extra step so the text sits a bit farther to the side */
-        // const labelOffset = 18;         // ✧ tune this number if needed
+        // const labelOffset = 18;          
 
         // /* draw a connector polyline + label for each slice  */
         // arcs.each(function (d) {
@@ -91,8 +91,7 @@ function AccTyDonutChart({ data, width = 300, height = 300 }) {
         //         );
         // });
 
-        // Center "Total" label
-        g.append("text")
+             g.append("text")
             .attr("text-anchor", "middle")
             .attr("dy", "-0.4em")
             .style("font-size", "20px")

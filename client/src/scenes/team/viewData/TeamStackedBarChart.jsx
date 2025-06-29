@@ -29,7 +29,7 @@ function TeamStackedBarChart({ data, width = 600, height = 400 }) {
             return entry;
         });
 
-        const dynamicHeight = height + types.length * 12; // Dynamically adjust chart height
+        const dynamicHeight = height + types.length * 12; // adjust chart height
         const margin = { top: 50, right: 20, bottom: 60, left: 80 };
         const svgW = width;
         const svgH = dynamicHeight;
@@ -103,7 +103,7 @@ function TeamStackedBarChart({ data, width = 600, height = 400 }) {
             .join("rect")
             .attr("x", d => x(d.data.quarter))
             .attr("y", d => y(d[1]))
-            .attr("height", d => Math.max(y(d[0]) - y(d[1]), 5)) // Enforce minimum bar height
+            .attr("height", d => Math.max(y(d[0]) - y(d[1]), 5)) // minimum bar height
             .attr("width", x.bandwidth())
             .attr("stroke", theme.palette.background.paper)
             .attr("stroke-width", 1);

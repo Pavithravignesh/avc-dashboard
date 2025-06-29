@@ -9,8 +9,7 @@ import * as d3 from "d3";
 const formatK = val => `$${val.toLocaleString()}`;
 
 function TeamSummaryTable({ data = [] }) {
-    const theme = useTheme();                                   // ← NEW
-    /*─────────────────────────────  COLOR TOKENS ─────────────────────────────*/
+    const theme = useTheme();                                   
     const headerBg = theme.palette.primary.main;
     const headerColor = theme.palette.primary.contrastText;
     const subHeaderBg =
@@ -18,8 +17,7 @@ function TeamSummaryTable({ data = [] }) {
             ? alpha(theme.palette.primary.light, 0.20)
             : alpha(theme.palette.primary.dark, 0.35);
 
-    // very subtle zebra striping that works in both modes
-    const zebra = idx =>
+     const zebra = idx =>
         alpha(theme.palette.action.selected, theme.palette.mode === "light" ? 0.25 : 0.15);
 
     // total‑row background
@@ -28,8 +26,7 @@ function TeamSummaryTable({ data = [] }) {
             ? lighten(theme.palette.background.paper, 0.04)
             : darken(theme.palette.background.paper, 0.10);
 
-    /*────────────────────────  DATA SHAPING (unchanged) ──────────────────────*/
-    const quarters = [...new Set(data.map(d => d.closed_fiscal_quarter))];
+     const quarters = [...new Set(data.map(d => d.closed_fiscal_quarter))];
     const custTypes = [...new Set(data.map(d => d.Team))];
     const summary = {};
     quarters.forEach(q => {
@@ -58,15 +55,13 @@ function TeamSummaryTable({ data = [] }) {
         };
     });
 
-    /*──────────────────────────────  RENDER  ────────────────────────────────*/
-    return (
+     return (
         <TableContainer
             component={Paper}
             sx={{ mt: 4, borderRadius: 2, boxShadow: 3 }}
         >
             <Table size="small" stickyHeader>
-                {/* ───────────────────────── Header Rows ────────────────────────── */}
-                <TableHead>
+                 <TableHead>
                     <TableRow>
                         <TableCell
                             rowSpan={2}
@@ -110,8 +105,7 @@ function TeamSummaryTable({ data = [] }) {
                     </TableRow>
                 </TableHead>
 
-                {/* ───────────────────────── Body Rows ───────────────────────────── */}
-                <TableBody>
+                 <TableBody>
                     {custTypes.map((type, idx) => (
                         <TableRow
                             key={type}
@@ -145,8 +139,7 @@ function TeamSummaryTable({ data = [] }) {
                         </TableRow>
                     ))}
 
-                    {/* ────────────────────────── Total Row ────────────────────────── */}
-                    <TableRow sx={{ backgroundColor: totalBg }}>
+                     <TableRow sx={{ backgroundColor: totalBg }}>
                         <TableCell sx={{ fontWeight: "bold" }}>Total</TableCell>
                         {quarters.map(q => (
                             <React.Fragment key={q}>

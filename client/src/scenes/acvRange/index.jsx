@@ -78,8 +78,7 @@ function AcvRange() {
 
             <Box display="flex" flexDirection="column" gap={3} mt={3}>
 
-                {/* Charts Section */}
-                <Box display="flex" flexDirection={isNonMobile ? "row" : "column"} gap={3}>
+                 <Box display="flex" flexDirection={isNonMobile ? "row" : "column"} gap={3}>
                     <Box flex={isNonMobile ? "2" : "1"} display="flex" flexDirection="column" gap={3}>
                         <FlexBetween>
                             <Box display="flex" alignItems="left" justifyContent="center">
@@ -106,8 +105,7 @@ function AcvRange() {
                     </Box>
                 </Box>
 
-                {/* Summary Table with Copy Button */}
-                <Box width="100%" ref={tableRef} mb="2rem">
+                 <Box width="100%" ref={tableRef} mb="2rem">
                     <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
                         <Typography variant="h6">Summary Table</Typography>
                         <Tooltip title="Copy Table">

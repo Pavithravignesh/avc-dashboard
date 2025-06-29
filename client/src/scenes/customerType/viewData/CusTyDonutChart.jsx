@@ -43,27 +43,23 @@ function CusTyDonutChart({ data, width = 300, height = 300 }) {
     arcs.append("path")
       .attr("d", arc)
       .attr("fill", (_, i) => COLORS[i % COLORS.length])
-      .attr("stroke", theme.palette.background.paper) // stroke adjusts with theme
+      .attr("stroke", theme.palette.background.paper)  
       .attr("stroke-width", 2);
 
     const total = d3.sum(data, d => d.value);
 
-    /* ───────── LABEL ARC & CONNECTOR LINES ───────── */
-    const labelArc = d3.arc()
+     const labelArc = d3.arc()
       .outerRadius(radius * 1.25)   // where connector bends
       .innerRadius(radius * 1.25);  // keep inner = outer → circle
 
-    /* one extra step so the text sits a bit farther to the side */
-    const labelOffset = 18;         // ✧ tune this number if needed
+     const labelOffset = 18;          
 
-    /* draw a connector polyline + label for each slice  */
-    arcs.each(function (d) {
+     arcs.each(function (d) {
       const group = d3.select(this);
       const midAngle = (d.startAngle + d.endAngle) / 2;
       const [x, y] = labelArc.centroid(d);            // bend point
 
-      /* 3‑segment polyline:     slice → bend → labelAnchor */
-      const posA = arc.centroid(d);                      // slice centre
+       const posA = arc.centroid(d);                      // slice centre
       const posB = [x, y];                               // first bend
       const posC = [
         x + (midAngle > Math.PI ? -labelOffset : labelOffset),
@@ -91,8 +87,7 @@ function CusTyDonutChart({ data, width = 300, height = 300 }) {
         );
     });
 
-    // Center "Total" label
-    g.append("text")
+     g.append("text")
       .attr("text-anchor", "middle")
       .attr("dy", "-0.4em")
       .style("font-size", "20px")
