@@ -11,18 +11,21 @@ import customerTypeRoutes from "./routes/customerType.js";
 import accountIndustryRoutes from "./routes/accountIndustry.js";
 import acvRangeRoutes from "./routes/acvRange.js";
 import teamRoutes from "./routes/team.js";
+import userRoutes from "./routes/user.js";
 
 // models imports
 import AccountIndustry from "./models/AccountIndustry.js";
 import AcvRange from "./models/AcvRange.js";
 import CustomerType from "./models/CustomerType.js";
 import Team from "./models/Team.js";
+import User from "./models/User.js";
 
 // data imports
 import accountIndustryData from "./data/accountIndustryJs.js";
 import acvRangeData from "./data/acvRangeJs.js";
 import customerTypeData from "./data/customerTypeJs.js";
 import teamData from "./data/teamJs.js";
+import userData from "./data/userJs.js";
 
 // CONFIGURATION
 dotenv.config();
@@ -49,6 +52,7 @@ app.use("/customerType", customerTypeRoutes);
 app.use("/accountIndustry", accountIndustryRoutes);
 app.use("/acvRange", acvRangeRoutes);
 app.use("/team", teamRoutes);
+app.use("/user", userRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
@@ -61,5 +65,6 @@ mongoose
     // AcvRange.insertMany(acvRangeData);
     // CustomerType.insertMany(customerTypeData);
     // Team.insertMany(teamData);
+    // User.insertMany(userData);
   })
   .catch((error) => console.log(`${error} Server did not connect`));
