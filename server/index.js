@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 
+// routes
 import customerTypeRoutes from "./routes/customerType.js";
 import accountIndustryRoutes from "./routes/accountIndustry.js";
 import acvRangeRoutes from "./routes/acvRange.js";
@@ -17,14 +18,11 @@ import AcvRange from "./models/AcvRange.js";
 import CustomerType from "./models/CustomerType.js";
 import Team from "./models/Team.js";
 
-// // data imports
+// data imports
 import accountIndustryData from "./data/accountIndustryJs.js";
 import acvRangeData from "./data/acvRangeJs.js";
 import customerTypeData from "./data/customerTypeJs.js";
 import teamData from "./data/teamJs.js";
-
-
-
 
 // CONFIGURATION
 dotenv.config();
@@ -58,7 +56,7 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-    // ONLY ADD DATA ONE TIME
+    // // ONLY ADD DATA ONE TIME
     // AccountIndustry.insertMany(accountIndustryData);
     // AcvRange.insertMany(acvRangeData);
     // CustomerType.insertMany(customerTypeData);
