@@ -13,19 +13,19 @@ import acvRangeRoutes from "./routes/acvRange.js";
 import teamRoutes from "./routes/team.js";
 import userRoutes from "./routes/user.js";
 
-// models imports
-import AccountIndustry from "./models/AccountIndustry.js";
-import AcvRange from "./models/AcvRange.js";
-import CustomerType from "./models/CustomerType.js";
-import Team from "./models/Team.js";
-import User from "./models/User.js";
+// // models imports
+// import AccountIndustry from "./models/AccountIndustry.js";
+// import AcvRange from "./models/AcvRange.js";
+// import CustomerType from "./models/CustomerType.js";
+// import Team from "./models/Team.js";
+// import User from "./models/User.js";
 
-// data imports
-import accountIndustryData from "./data/accountIndustryJs.js";
-import acvRangeData from "./data/acvRangeJs.js";
-import customerTypeData from "./data/customerTypeJs.js";
-import teamData from "./data/teamJs.js";
-import userData from "./data/userJs.js";
+// // data imports
+// import accountIndustryData from "./data/accountIndustryJs.js";
+// import acvRangeData from "./data/acvRangeJs.js";
+// import customerTypeData from "./data/customerTypeJs.js";
+// import teamData from "./data/teamJs.js";
+// import userData from "./data/userJs.js";
 
 // CONFIGURATION
 dotenv.config();
