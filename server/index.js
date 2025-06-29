@@ -5,10 +5,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-// import customerTypeRoutes from "./routes/customerType.js";
-// import accountIndustryRoutes from "./routes/accountIndustry.js";
-// import acvRangeRoutes from "./routes/acvRange.js";
-// import teamRoutes from "./routes/team.js";
+
+// routes
+import customerTypeRoutes from "./routes/customerType.js";
+import accountIndustryRoutes from "./routes/accountIndustry.js";
+import acvRangeRoutes from "./routes/acvRange.js";
+import teamRoutes from "./routes/team.js";
 
 // models imports
 import AccountIndustry from "./models/AccountIndustry.js";
@@ -16,14 +18,11 @@ import AcvRange from "./models/AcvRange.js";
 import CustomerType from "./models/CustomerType.js";
 import Team from "./models/Team.js";
 
-// // data imports
+// data imports
 import accountIndustryData from "./data/accountIndustryJs.js";
 import acvRangeData from "./data/acvRangeJs.js";
 import customerTypeData from "./data/customerTypeJs.js";
 import teamData from "./data/teamJs.js";
-
-
-
 
 // CONFIGURATION
 dotenv.config();
@@ -46,10 +45,10 @@ app.use(
 );
 
 // ROUTES
-// app.use("/customerType", customerTypeRoutes);
-// app.use("/accountIndustry", accountIndustryRoutes);
-// app.use("/acvRange", acvRangeRoutes);
-// app.use("/team", teamRoutes);
+app.use("/customerType", customerTypeRoutes);
+app.use("/accountIndustry", accountIndustryRoutes);
+app.use("/acvRange", acvRangeRoutes);
+app.use("/team", teamRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;
@@ -57,7 +56,7 @@ mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-    // ONLY ADD DATA ONE TIME
+    // // ONLY ADD DATA ONE TIME
     // AccountIndustry.insertMany(accountIndustryData);
     // AcvRange.insertMany(acvRangeData);
     // CustomerType.insertMany(customerTypeData);
