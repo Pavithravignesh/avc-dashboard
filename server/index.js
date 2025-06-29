@@ -5,10 +5,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-// import customerTypeRoutes from "./routes/customerType.js";
-// import accountIndustryRoutes from "./routes/accountIndustry.js";
-// import acvRangeRoutes from "./routes/acvRange.js";
-// import teamRoutes from "./routes/team.js";
+
+import customerTypeRoutes from "./routes/customerType.js";
+import accountIndustryRoutes from "./routes/accountIndustry.js";
+import acvRangeRoutes from "./routes/acvRange.js";
+import teamRoutes from "./routes/team.js";
 
 // models imports
 import AccountIndustry from "./models/AccountIndustry.js";
@@ -46,10 +47,10 @@ app.use(
 );
 
 // ROUTES
-// app.use("/customerType", customerTypeRoutes);
-// app.use("/accountIndustry", accountIndustryRoutes);
-// app.use("/acvRange", acvRangeRoutes);
-// app.use("/team", teamRoutes);
+app.use("/customerType", customerTypeRoutes);
+app.use("/accountIndustry", accountIndustryRoutes);
+app.use("/acvRange", acvRangeRoutes);
+app.use("/team", teamRoutes);
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 9000;

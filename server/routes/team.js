@@ -1,11 +1,8 @@
 import express from "express";
-// import { getOverview, getDaily, getBreakdown } from "../controllers/sales.js";
+import { getTeam } from "../controllers/team.js";
 
 const router = express.Router();
 
-// router.get("/overview", getOverview);
-// router.get("/daily", getDaily);
-// router.get("/monthly", getMonthly);
-// router.get("/breakdown", getBreakdown);
+router.get("/viewData", getTeam);
 
 export default router;

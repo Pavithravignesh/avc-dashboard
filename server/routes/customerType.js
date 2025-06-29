@@ -1,14 +1,8 @@
 import express from "express";
-import {
-  getProducts,
-  getCustomers,
-  getTransaction,
-} from "../controllers/client.js";
+import { getCustomerType } from "../controllers/customerType.js";
 
 const router = express.Router();
 
-router.get("/products", getProducts);
-router.get("/customers", getCustomers);
-router.get("/transaction", getTransaction);
+router.get("/viewData", getCustomerType);
 
 export default router;

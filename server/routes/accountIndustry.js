@@ -1,8 +1,8 @@
 import express from "express";
-import { getUser } from "../controllers/general.js";
+import { getAccountIndustry } from "../controllers/accountIndustry.js";
 
 const router = express.Router();
 
-router.get("/user/:id", getUser);
+router.get("/viewData", getAccountIndustry);
 
 export default router;
