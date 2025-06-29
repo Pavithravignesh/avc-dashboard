@@ -10,7 +10,6 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { themeSettings } from "theme";
-import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
 import AcvRange from "scenes/acvRange";
 import CustomerType from "scenes/customerType";
@@ -29,12 +28,11 @@ function App() {
           {/* <Router> */}
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/" element={<Navigate to="/customerType" replace />} />
               <Route path="/customerType" element={<CustomerType />} />
-              <Route path="/accountIndustry" element={<AccountIndustry />} />
               <Route path="/acvRange" element={<AcvRange />} />
               <Route path="/team" element={<Team />} />
+              <Route path="/accountIndustry" element={<AccountIndustry />} />
             </Route>
           </Routes>
           {/* </Router> */}

@@ -37,23 +37,13 @@ import profileImage from "assets/trump.jpeg";
 
 const navItems = [
   {
-    text: "Dashboard",
-    icon: <HomeOutlined />,
-    path: "dashboard"
-  },
-  {
-    text: "Client Facing",
+    text: "Admin View",
     icon: null,
   },
   {
     text: "Customer Type",
     icon: <ShoppingCartOutlined />,
     path: "customerType"
-  },
-  {
-    text: "Account Industry",
-    icon: <GroupOutlined />,
-    path: "accountIndustry"
   },
   {
     text: "ACV Range",
@@ -64,7 +54,11 @@ const navItems = [
     text: "Team",
     icon: <PublicOutlined />,
     path: "team"
-  }
+  }, {
+    text: "Account Industry",
+    icon: <GroupOutlined />,
+    path: "accountIndustry"
+  },
 ];
 
 function SideBar({
