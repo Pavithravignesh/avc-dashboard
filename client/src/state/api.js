@@ -10,28 +10,20 @@ export const api = createApi({
       providesTags: ["User"],
     }),
     getCustomerType: build.query({
-      query: (id) => `customerType/viewData`,
+      query: () => `customerType/viewData`,
       providesTags: ["CustomerType"],
     }),
     getAccountIndustry: build.query({
-      query: (id) => `accountIndustry/viewData`,
+      query: () => `accountIndustry/viewData`,
       providesTags: ["AccountIndustry"],
     }),
     getAcvRange: build.query({
-      query: (id) => `acvRange/viewData`,
+      query: () => `acvRange/viewData`,
       providesTags: ["AcvRange"],
     }),
     getTeam: build.query({
-      query: (id) => `team/viewData`,
+      query: () => `team/viewData`,
       providesTags: ["Team"],
-    }),
-    getTransaction: build.query({
-      query: ({ page, pageSize, sort, search }) => ({
-        url: `client/transaction`,
-        method: "GET",
-        params: { page, pageSize, sort, search },
-      }),
-      providesTags: ["Transaction"],
     }),
   }),
 });
@@ -42,5 +34,4 @@ export const {
   useGetAccountIndustryQuery,
   useGetAcvRangeQuery,
   useGetTeamQuery,
-  useGetTransactionQuery,
 } = api;

@@ -3,21 +3,19 @@ import {
   LightModeOutlined,
   DarkModeOutlined,
   Menu as MenuIcon,
-  Search,
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "./FlexBetween";
 import { useDispatch } from "react-redux";
 import { setMode } from "state";
-import profileImage from "assets/trump.jpeg";
 import { useTheme } from "@emotion/react";
 import {
   AppBar,
+  Avatar,
   Box,
   Button,
   IconButton,
-  InputBase,
   Menu,
   MenuItem,
   Toolbar,
@@ -83,15 +81,18 @@ function Navbar({ user, isSideBarOpen, setIsSideBarOpen }) {
                 gap: "1rem",
               }}
             >
-              <Box
-                component="img"
-                alt="profile"
-                src={profileImage}
-                height="32px"
-                width="32px"
-                borderRadius="50%"
-                sx={{ objectFit: "cover" }}
-              />
+              <Avatar
+                alt={user.name}
+                sx={{
+                  width: 32,
+                  height: 32,
+                  fontSize: "0.9rem",
+                  bgcolor: theme.palette.secondary[300],
+                  color: theme.palette.primary[600],
+                }}
+              >
+                {user.name?.[0]}
+              </Avatar>
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"

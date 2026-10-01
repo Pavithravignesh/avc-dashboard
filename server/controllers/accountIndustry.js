@@ -5,6 +5,7 @@ export const getAccountIndustry = async (req, res) => {
         const dataAccountIndustry = await AccountIndustry.find({});
         res.status(200).json(dataAccountIndustry);
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        console.error(error);
+        res.status(500).json({ message: "Internal server error" });
     }
 };

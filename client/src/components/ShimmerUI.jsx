@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Skeleton, useMediaQuery } from '@mui/material';
 import Header from 'components/Header';
 
-function ShimmerUI() {
+function ShimmerUI({ title = "" }) {
     const isNonMobile = useMediaQuery("(min-width: 1000px)");
     const isTablet = useMediaQuery("(min-width: 768px)");
 
@@ -11,7 +11,7 @@ function ShimmerUI() {
 
     return (
         <Box m={isNonMobile ? "1.5rem 2.5rem" : "1rem 1.5rem"}>
-            <Header title="Account Industry" subTitle="Loading data..." />
+            <Header title={title} subTitle="Loading data..." />
 
             <Box display="flex" flexDirection="column" gap={3} mt={3}>
                 <Box display="flex" flexDirection={isNonMobile ? "row" : "column"} gap={3}>

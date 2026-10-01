@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
+  Avatar,
   Box,
   Divider,
   // Divider,
@@ -17,23 +18,15 @@ import {
   // SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
-  HomeOutlined,
   ShoppingCartOutlined,
   GroupOutlined,
   ReceiptLongOutlined,
   PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  TrendingUpOutlined,
-  PieChartOutlined,
   SettingsOutlined,
 } from "@mui/icons-material";
-import CalendarMonthOutlined from "@mui/icons-material/CalendarMonthOutlined";
-import AdminPanelSettingsOutlined from "@mui/icons-material/AdminPanelSettingsOutlined";
 // import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
-import profileImage from "assets/trump.jpeg";
 
 const navItems = [
   {
@@ -119,8 +112,6 @@ function SideBar({
                     </Typography>
                   );
                 }
-                const lcText = text.toLocaleLowerCase();
-
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton
@@ -166,15 +157,18 @@ function SideBar({
           <Box position="absolute" bottom="2rem" width="100%">
             <Divider />
             <FlexBetween textTransform="none" gap="1rem" m="1.5rem 2rem 0 3rem">
-              <Box
-                component="img"
-                alt="profile"
-                src={profileImage}
-                height="40px"
-                width="40px"
-                borderRadius="50%"
-                sx={{ objectFit: "cover" }}
-              />
+              <Avatar
+                alt={user.name}
+                sx={{
+                  width: 40,
+                  height: 40,
+                  fontSize: "1rem",
+                  bgcolor: theme.palette.secondary[300],
+                  color: theme.palette.primary[600],
+                }}
+              >
+                {user.name?.[0]}
+              </Avatar>
               <Box textAlign="left">
                 <Typography
                   fontWeight="bold"

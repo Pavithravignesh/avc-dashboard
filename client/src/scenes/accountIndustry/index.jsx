@@ -25,7 +25,7 @@ function AccountIndustry() {
     if (isLoading || !data || !Array.isArray(data)) {
         return (
             <Box mt="20px">
-                <ShimmerUI />
+                <ShimmerUI title="Account Industry" />
             </Box>
         );
     }
@@ -74,7 +74,7 @@ function AccountIndustry() {
 
     return (
         <Box m={isNonMobile ? "1.5rem 2.5rem" : "1rem 1.5rem"}>
-            <Header title="Account Indutry" subTitle="Account Indutry analysis" />
+            <Header title="Account Industry" subTitle="Account industry analysis" />
 
             <Box display="flex" flexDirection="column" gap={3} mt={3}>
 

@@ -13,6 +13,8 @@ server/dist
 /client/dist
 
 # Environment variables
+.env
+.vercel
 client/.env
 client/.env.local
 client/.env.development.local
@@ -92,9 +94,6 @@ jspm_packages/
 # Nuxt.js build / generate output
 .nuxt
 
-# Gatsby files
-.cache/
-public
 
 # Storybook build outputs
 .out
@@ -115,8 +114,3 @@ server/logs/
 # Backup files
 *.bak
 *.backup
-
-# Package lock files (optional - uncomment if you want to ignore them)
-# package-lock.json
-server/package-lock.json
-# yarn.lock 

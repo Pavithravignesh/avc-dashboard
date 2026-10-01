@@ -25,7 +25,7 @@ function AcvRange() {
     if (isLoading || !data || !Array.isArray(data)) {
         return (
             <Box mt="20px">
-                <ShimmerUI />
+                <ShimmerUI title="ACV Range" />
             </Box>
         );
     }
@@ -74,7 +74,7 @@ function AcvRange() {
 
     return (
         <Box m={isNonMobile ? "1.5rem 2.5rem" : "1rem 1.5rem"}>
-            <Header title="Customer Type" subTitle="Customer type analysis" />
+            <Header title="ACV Range" subTitle="ACV range analysis" />
 
             <Box display="flex" flexDirection="column" gap={3} mt={3}>
 

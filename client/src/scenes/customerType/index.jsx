@@ -25,7 +25,7 @@ function CustomerType() {
   if (isLoading || !data || !Array.isArray(data)) {
     return (
       <Box mt="20px">
-        <ShimmerUI />
+        <ShimmerUI title="Customer Type" />
       </Box>
     );
   }
