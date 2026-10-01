@@ -17,19 +17,12 @@ import {
   // SettingsOutlined,
   ChevronLeft,
   ChevronRightOutlined,
-  HomeOutlined,
   ShoppingCartOutlined,
   GroupOutlined,
   ReceiptLongOutlined,
   PublicOutlined,
-  PointOfSaleOutlined,
-  TodayOutlined,
-  TrendingUpOutlined,
-  PieChartOutlined,
   SettingsOutlined,
 } from "@mui/icons-material";
-import CalendarMonthOutlined from "@mui/icons-material/CalendarMonthOutlined";
-import AdminPanelSettingsOutlined from "@mui/icons-material/AdminPanelSettingsOutlined";
 // import ChevronRightOutlined from "@mui/icons-material/ChevronRightOutlined";
 import { useLocation, useNavigate } from "react-router-dom";
 import FlexBetween from "./FlexBetween";
@@ -119,8 +112,6 @@ function SideBar({
                     </Typography>
                   );
                 }
-                const lcText = text.toLocaleLowerCase();
-
                 return (
                   <ListItem key={text} disablePadding>
                     <ListItemButton

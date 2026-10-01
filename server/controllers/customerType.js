@@ -5,6 +5,7 @@ export const getCustomerType = async (req, res) => {
     const dataCustomerType = await CustomerType.find({});
     res.status(200).json(dataCustomerType);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
   }
 };

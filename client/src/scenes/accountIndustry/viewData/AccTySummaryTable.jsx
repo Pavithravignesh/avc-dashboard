@@ -84,7 +84,7 @@ function AccTySummaryTable({ data = [] }) {
                 textAlign: "center",
               }}
             >
-              Cust&nbsp;Type
+              Industry
             </TableCell>
             {quarters.map((q) => (
               <TableCell

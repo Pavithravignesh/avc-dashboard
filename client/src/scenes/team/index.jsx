@@ -25,7 +25,7 @@ function Team() {
     if (isLoading || !data || !Array.isArray(data)) {
         return (
             <Box mt="20px">
-                <ShimmerUI />
+                <ShimmerUI title="Team" />
             </Box>
         );
     }
@@ -74,7 +74,7 @@ function Team() {
 
     return (
         <Box m={isNonMobile ? "1.5rem 2.5rem" : "1rem 1.5rem"}>
-            <Header title="Customer Type" subTitle="Customer type analysis" />
+            <Header title="Team" subTitle="Team analysis" />
 
             <Box display="flex" flexDirection="column" gap={3} mt={3}>
 

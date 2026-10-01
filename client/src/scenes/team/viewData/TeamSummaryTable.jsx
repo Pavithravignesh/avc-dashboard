@@ -67,7 +67,7 @@ function TeamSummaryTable({ data = [] }) {
                             rowSpan={2}
                             sx={{ backgroundColor: headerBg, color: headerColor, fontWeight: "bold", textAlign: "center" }}
                         >
-                            Cust&nbsp;Type
+                            Team
                         </TableCell>
                         {quarters.map(q => (
                             <TableCell
